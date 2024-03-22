@@ -1,0 +1,9 @@
+[accountname1]
+method=plain
+login=thelogin@example.com
+password=p4ssw0rd
+
+[accountname2]
+method=MSAuth
+login=thelogin@example.com
+password=p4ssw0rd
