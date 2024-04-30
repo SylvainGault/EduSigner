@@ -147,7 +147,7 @@ def main():
         print("No signature file provided, can't sign")
         return
 
-    edusign.sign(args.signature_file)
+    edusign.sign(args.school_id, args.course_id, args.signature_file)
     logging.info("Signature completed")
 
 
