@@ -374,9 +374,9 @@ class EduSign:
     def sign(self, school_id, course_id, path):
         assert magic.from_file(path, mime=True) == "image/png"
 
-        with open(path) as fp:
+        with open(path, "rb") as fp:
             sign = b"data:image/png;base64,"
-            sign += bind.b2a_base64(fp.read())
+            sign += binascii.b2a_base64(fp.read())
 
         url = f"/professor/courses/setProfessorSignature/{school_id}/{course_id}"
         return self._post(url, json={"base64Signature": sign})
